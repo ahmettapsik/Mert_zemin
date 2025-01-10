@@ -1,0 +1,536 @@
+:root {
+    --primary-color: #c17f59; /* Daha soft, toprak tonlarında kahverengi */
+    --primary-light: #d4956b; /* Açık kahverengi */
+    --primary-dark: #a66a47; /* Koyu kahverengi */
+    --primary-color-rgb: 193, 127, 89; /* RGB değerleri */
+    --light-bg: #f5f5f5;
+}
+
+.service-detail {
+    padding-top: 55px; /* Header yüksekliği */
+    background-color: var(--primary-color);
+    color: white;
+    position: relative;
+}
+
+.service-detail::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/texture.png');
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.service-header {
+    padding: 4rem 0 2rem;
+    text-align: center;
+    position: relative;
+    color: white;
+}
+
+.service-header h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.service-image {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.service-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    display: block;
+}
+
+.service-content {
+    position: relative;
+}
+
+/* Kartlar ve bölümler */
+.intro-section, .process, .pricing {
+    padding: 4rem 0;
+    position: relative;
+}
+
+.intro-inner, .process-inner, .pricing-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Giriş kartları */
+.intro-inner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.intro-card {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    flex: 1 1 100%;
+    min-height: 300px; 
+    width: auto; 
+}
+
+.intro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Kart içerikleri */
+.intro-card h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.intro-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.intro-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.intro-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.intro-card li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.intro-card li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -0.2rem;
+}
+
+.intro-card strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Süreç kartları */
+.process-steps {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.process-steps .step {
+    min-height: 300px; 
+    width: auto; 
+}
+
+.step {
+    background-color: var(--light-bg);
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1 1 auto;
+    height: 300px; /* Kartların yüksekliğini eşitliyorum */
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.step-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.step-content li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+    position: relative;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.step-content li::before {
+    content: '→';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.step.jet-grout, .step.kullanım-alanları, .step.mini-kazık {
+    background-color: var(--light-bg);
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1 1 auto;
+    height: 300px; /* Kartların yüksekliğini eşitliyorum */
+}
+
+/* Fiyatlandırma kartları */
+.pricing {
+    background-color: var(--primary-color); /* Arka plan rengini sayfanın rengi ile aynı yapıyorum */
+    padding: 4rem 0;
+}
+
+.pricing-factors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.factor {
+    background: white; /* Kartların arka plan rengini beyaz yapıyorum */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    text-align: center;
+    flex: 1 1 100%;
+    height: 200px; /* Kart yüksekliğini artırıyorum */
+}
+
+.factor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.factor i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.factor h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.factor p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Başlıklar */
+.section-title {
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* CTA Bölümü */
+.cta-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .intro-inner {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-inner {
+        grid-template-columns: minmax(200px, 1fr);
+    }
+    
+    .intro-section, .process, .pricing {
+        padding: 3rem 0;
+    }
+}
+
+.description h2,
+.application-areas h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.description p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.application-areas ul {
+    list-style: none;
+    padding: 0;
+}
+
+.application-areas li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.application-areas li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -0.2rem;
+}
+
+.application-areas strong {
+    color: var(--primary-color);
+}
+
+.process {
+    background-color: var(--primary-color); /* Arka plan rengini sayfanın rengi ile aynı yapıyorum */
+    padding: 4rem 0;
+}
+
+.process-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.step-number {
+    background: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.pricing-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.cta-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--primary-color);
+    color: white;
+}
+
+.cta-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: white;
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: var(--primary-dark);
+    color: white;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .service-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .service-content {
+        padding: 3rem 1rem;
+    }
+
+    .process-steps {
+        flex-direction: column;
+    }
+
+    .pricing-factors {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* WhatsApp İkonu */
+.floating-contact {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-btn i {
+    font-size: 32px;
+}
+
+/* Telefon İkonu */
+.phone-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #34b7f1;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(52, 183, 241, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phone-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(52, 183, 241, 0.5);
+}
+
+.phone-btn i {
+    font-size: 32px;
+}
+
+/* Hızlı İletişim Kartı */
+.contact-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-light);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(193, 127, 89, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-toggle:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(193, 127, 89, 0.5);
+}
+
+.contact-toggle i {
+    font-size: 32px;
+}
+
+.contact-info-sidebar {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background-color: var(--light-bg);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.contact-info-sidebar.active {
+    display: block;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-item i {
+    margin-right: 10px;
+}
+
+.application-criteria {
+    background-color: var(--primary-light);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
